@@ -209,3 +209,5 @@ class STNCNN(nn.Module):
 This version scores **99.610%** on the leaderboard test set ([source](https://www.kaggle.com/code/kamerondawson/digitrecognizer?scriptVersionId=297945682)).
 
 ## Conclusion
+
+These 5 models get us to #53 on the leaderboard out of 800+. It is worth noting that there are ~20 submissions with a perfect score, which are likely from gaming the dataset as its a subset of a publically available dataset. We could likely reach the top 10 by further improving upon the model ensemble.
