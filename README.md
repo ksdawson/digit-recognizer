@@ -95,3 +95,9 @@ class CNN(nn.Module):
 ```
 
 This version scores **99.207%** on the leaderboard test set ([source](https://www.kaggle.com/code/kamerondawson/digitrecognizer?scriptVersionId=297800078)).
+
+## Model #4: Data Augmentation, Model Ensemble, and Epochs
+
+At this point we have a pretty accurate model, so we have to get creative to get further performance boosts. First, it's likely that the remaining misclassified digits are due to weird distortions and our model is overfitting and unable to generalize to learn these quirky patterns. To help prevent this we augment our train set by rotating, translating, and zooming in on digits to create new distorted samples. We also introduce a homogeneous ensemble of 5 models to reduce errors. The models "soft-vote" on the classification by summing their output logits before applying the max activation function. We also increase the number of epochs from 10 to 30 to give sufficient training time to learn the complex features introduced by the data augmentation.
+
+This version scores **99.571%** on the leaderboard test set ([source](https://www.kaggle.com/code/kamerondawson/digitrecognizer?scriptVersionId=297834615)).
